@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">myCoolApp</string>
+    <string name="title_activity_kimera">myCoolApp</string>
+     <string name="task_dispatcher_channel_name">"Background location"</string>
+  <string name="task_dispatcher_channel_description">"Indicates when the app is accessing your location in background"</string>
+  <!-->
+    The notification title and content that your user will see in the status bar while the service is running in foreground.
+    (more info here: https://developer.android.com/guide/components/services#Foreground)
+  <-->
+  <string name="task_dispatcher_notification_title">"demo app is using your location"</string>
+  <string name="task_dispatcher_notification_content">""</string>
+</resources>
