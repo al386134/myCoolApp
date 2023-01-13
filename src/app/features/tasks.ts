@@ -9,19 +9,20 @@ import { checkAreaOfInterestProximityTask } from '@awarns/geofencing';
 import { sendNotificationTask } from '@awarns/notifications';
 import { writeRecordsTask } from '@awarns/persistence';
 import { acquireBatteryLevelTask } from '@awarns/battery';
+import { CheckBatteryTask } from './check-battery-task';
 
 export const appTasks: Array<Task> = [
   // START: human activity recognition tasks
-  startDetectingCoarseHumanActivityChangesTask(),
-  stopDetectingCoarseHumanActivityChangesTask(),
+  // startDetectingCoarseHumanActivityChangesTask(),
+  // stopDetectingCoarseHumanActivityChangesTask(),
   // END: human activity recognition tasks (see human-activity plugin docs to learn about these tasks and more)
   
   // START: location acquisition tasks
-  //acquirePhoneGeolocationTask(),
+  acquirePhoneGeolocationTask(),
   // END: location acquisition tasks (see geolocation plugin docs to learn about this task and more)
-  
+  new CheckBatteryTask(),
   // START: area of interest proximity detection tasks
-  //checkAreaOfInterestProximityTask(),
+  checkAreaOfInterestProximityTask(),
   // END: area of interest proximity detection tasks (see geofencing plugin docs to learn about this task and more)
   
   // START: user notification tasks
@@ -29,7 +30,7 @@ export const appTasks: Array<Task> = [
   // END: user notification tasks (see notifications plugin docs to learn about this task and more)
   
   // START: information persistence tasks
-  writeRecordsTask(),
+  // writeRecordsTask(),
   // END: information persistence tasks (see persistence plugin docs to learn about this task and more)
-  //acquireBatteryLevelTask(),
+  acquireBatteryLevelTask(),
 ];
