@@ -37,18 +37,18 @@ class AppTaskGraph implements TaskGraph {
     // // Similarly, another notification will be delivered right after detecting that the phone has been detected inside the area
     on(
       'movedInsideAreaOfInterest',
-      run('checkBatteryLevel'));
+      run('acquirePhoneBatteryLevel'));
 
     // And another notification will be sent when the oposite occurs
     on(
       'movedOutsideAreaOfInterest',
-      run('checkBatteryLevel'));
+      run('acquirePhoneBatteryLevel'));
 
     // on('startEvent', run('acquirePhoneBatteryLevel')
     // .every(1, 'minutes')
     // .cancelOn('stopEvent'));
 
-    // on('batteryLevelAcquired', run('checkBatteryLevel'));
+    on('batteryLevelAcquired', run('checkBatteryLevel'));
 
     on('notificationPrepared', run('sendNotification', {
       title: 'Battery aquired'
