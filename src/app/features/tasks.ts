@@ -13,8 +13,8 @@ import { CheckBatteryTask } from './check-battery-task';
 
 export const appTasks: Array<Task> = [
   // START: human activity recognition tasks
-  // startDetectingCoarseHumanActivityChangesTask(),
-  // stopDetectingCoarseHumanActivityChangesTask(),
+  startDetectingCoarseHumanActivityChangesTask(),
+  stopDetectingCoarseHumanActivityChangesTask(),
   // END: human activity recognition tasks (see human-activity plugin docs to learn about these tasks and more)
   
   // START: location acquisition tasks

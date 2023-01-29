@@ -26,6 +26,13 @@ export class AppComponent {
       radius: 40,
     },
     // You can add more than one area of interest
+    {
+      id: 'ingesom',
+      name: 'Ingesom',
+      latitude: 39.983949,
+      longitude: -0.039771,
+      radius: 40,
+    },
   ];
   
   // Naive check, to see if areas of interest have already been setup

@@ -13,9 +13,10 @@ class AppTaskGraph implements TaskGraph {
     run: RunnableTaskDescriptor
   ): Promise<void> {
 
+    on('startEvent', run('startDetectingCoarseHumanActivityChanges'))
     // Once a non-stationary action becomes detected, the location of the phone will be collected every 1 minute
     // The collection of the phone location will stop once the phone becomes still again
-    // on('userFinishedBeingStill', run('acquirePhoneGeolocation').every(1, 'minutes').cancelOn('userStartedBeingStill'));
+    on('userFinishedBeingStill', run('acquirePhoneGeolocation').every(1, 'minutes').cancelOn('userStartedBeingStill'));
 
     // // Each time a geolocation becomes acquired, we'll check how close it is to the known areas of interest (which we'll set up later)
     on(
@@ -55,7 +56,7 @@ class AppTaskGraph implements TaskGraph {
     }));
   
 
-    //on('stopEvent', run('stopDetectingCoarseHumanActivityChanges'));
+    on('stopEvent', run('stopDetectingCoarseHumanActivityChanges'));
 
 
 
