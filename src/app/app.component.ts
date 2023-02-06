@@ -1,9 +1,7 @@
 import { Component } from '@angular/core'
 import { awarns } from '@awarns/core';
 import { AreaOfInterest, areasOfInterest } from '@awarns/geofencing';
-import { BatteryLevel, BatteryLevelType } from '@awarns/battery';
-import { recordsStore } from '@awarns/persistence';
-import { Record } from '@awarns/core/entities';
+
 @Component({
   selector: 'ns-app',
   templateUrl: './app.component.html',
@@ -11,7 +9,7 @@ import { Record } from '@awarns/core/entities';
 export class AppComponent {
 
   async ngOnInit(){
-/* 1. Before setting up the tasks, setup areas of interest */
+  /* 1. Before setting up the tasks, setup areas of interest */
 
   // First we query for any existing area of interest
   const aois = await areasOfInterest.getAll();
@@ -25,7 +23,6 @@ export class AppComponent {
       longitude: -0.0739913,
       radius: 40,
     },
-    // You can add more than one area of interest
     {
       id: 'ingesom',
       name: 'Ingesom',
