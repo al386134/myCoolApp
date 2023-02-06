@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+import { AreaOfInterest } from '@awarns/geofencing'
 
-import { Item } from './item'
 import { ItemService } from './item.service'
 
 @Component({
@@ -9,12 +9,12 @@ import { ItemService } from './item.service'
   templateUrl: './item-detail.component.html',
 })
 export class ItemDetailComponent implements OnInit {
-  item: Item
+  item: AreaOfInterest
 
   constructor(private itemService: ItemService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id
+    const id = this.route.snapshot.params.id
     this.item = this.itemService.getItem(id)
   }
 }
